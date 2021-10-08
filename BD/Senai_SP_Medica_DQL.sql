@@ -11,11 +11,11 @@ SELECT * FROM MEDICO
 SELECT * FROM CONSULTA
 
 SELECT nomeUsuario 'Nome', email 'Email', nomeTipoUser 'tipo de usuário', cpf, rg
-FROM USUARIO u
-INNER JOIN PACIENTE p
-ON u.idUsuario = p.idUsuario
-INNER JOIN TIPO_USUARIO tu
-ON tu.idTipoUsuario = u.idTipoUsuario
+FROM USUARIO
+INNER JOIN PACIENTE
+ON USUARIO.idUsuario = PACIENTE.idUsuario
+INNER JOIN TIPO_USUARIO
+ON TIPO_USUARIO.idTipoUsuario = USUARIO.idTipoUsuario
 GO
 
 SELECT * FROM USUARIO u
