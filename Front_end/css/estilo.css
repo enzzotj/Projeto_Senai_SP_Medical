@@ -40,7 +40,7 @@
     font-family: 'Dongle', sans-serif;
     font-weight: bold;
     margin-top: 15px;
-    color: #F00000;
+    color: #002ABF;
 }
 
 .container_login_form{
@@ -54,8 +54,7 @@
     height: 35px;
     width: 350px;
     border-radius: 7px;
-    font-family: 'Dongle', sans-serif;
-    font-size: 26px;
+    font-size: 15px;
     margin-top: 20px;
 }
 
@@ -66,25 +65,115 @@
     font-family: 'Dongle', sans-serif;
     font-size: 26px;
     color: #F6F6F6;
-    background-color: #F00000;
+    background-color: #002ABF;
     font-weight: bold;
     margin-top: 46px;
 }
 
 header{
-    width: 100vw;
-    height: 90px;
-    background-color: #F00000;
+    height: 65px;
+    background-color: #002ABF;
 }
 
 .logo{
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
 }
+
 
 .container_header{
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.container_header h1{
+    font-family: 'Dongle', sans-serif;
+    font-size: 35px;
+    color: #efefef;
+}
+
+.img_sair {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+.container_final_header{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.container_fundotab{
+    background-image: url(../img/test3.jpg);
+    background-size: cover;
+}
+
+.container_tab{
+    width: 1200px;
+    height: auto;
+    margin: 60px 0;
+    background-color: #fff;
+    border-style: solid;
+    border-color: #002ABF;
+    border-radius: 10px;
+}
+.container_centralizar{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.table{
+    border-collapse: separate;
+    border-spacing: 30px;
+    width: 100%;
+    font-size: 15px;
+}
+
+.container_cadastrar{
+    width: 1200px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.input_cad{
+    width: 300px;
+    height: 35px;
+    border-radius: 10px;
+    border-color: #002ABF;
+    font-size: 15px;
+    margin-right: 60px;
+}
+
+.input_cad_data{
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    border-color: #002ABF;
+    font-size: 15px;
+    margin-right: 80px;
+}
+
+.input_cad_button{
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #002ABF;
+    color: #efefef;
+}
+
+.table td{
+    display: flex;
+    flex-direction: column;
 }
