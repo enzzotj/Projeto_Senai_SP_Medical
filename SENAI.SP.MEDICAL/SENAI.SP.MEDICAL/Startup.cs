@@ -49,6 +49,18 @@ namespace SENAI.SP.MEDICAL
                     };
                 });
 
+                services.AddCors(options => 
+                {
+                    options.AddPolicy("CorsPolicy",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:3000")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                    });
+                }
+                );
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -71,6 +83,8 @@ namespace SENAI.SP.MEDICAL
             }
 
             app.UseRouting();
+
+            app.UseCors("CorsPolicy")
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
