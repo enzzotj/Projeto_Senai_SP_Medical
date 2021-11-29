@@ -20,20 +20,20 @@ INSERT INTO TIPO_USUARIO(nomeTipoUser)
 VALUES ('Adm'), ('Cm'), ('Mdc')
 GO
 
-INSERT INTO USUARIO(idTipoUsuario, nomeUsuario, email, senha)
-VALUES (1, 'Enzzo', 'enzzo@email.com', '1122'), (2, 'Marcelo', 'marcelo@email.com', '1133'),
-(2, 'Yuri', 'yuri@email.com', '1144'), (2, 'Gabriela', 'gabriela@email.com', '1155'),
-(3, 'Ana', 'ana@email.com', '1166'), (3, 'Mateus', 'mateus@email.com', '1177')
+INSERT INTO USUARIO(idTipoUsuario, email, senha)
+VALUES (1, 'enzzo@email.com', '1122'), (2, 'marcelo@email.com', '1133'),
+(2, 'yuri@email.com', '1144'), (2, 'gabriela@email.com', '1155'),
+(3, 'ana@email.com', '1166'), (3, 'mateus@email.com', '1177')
 GO
 
-INSERT INTO MEDICO(idUsuario, idClinica, idEspecialidade, crm)
-VALUES (5, 1, 7, '1234 - SP'), (6, 1, 3, '4321 - SP')
+INSERT INTO MEDICO(idUsuario, nomeMedico, idClinica, idEspecialidade, crm)
+VALUES (5, 'Mateus', 1, 7, '1234 - SP'), (6, 'Ana', 1, 3, '4321 - SP')
 GO
 
-INSERT INTO PACIENTE(idUsuario, dataNascimento, telefone, rg, cpf, enderecoPaciente)
-VALUES(2, '02-10-1987', '11 936878369', '579548609', '47669729607', 'Av. São judas - 000'),
-(3, '17-03-1999', '11 963061369', '439548674', '30269729115', 'Av. São jose - 111'),
-(4, '21-11-2002', '11 966778300', '679548610', '57269727781', 'Av. São carlos - 222')
+INSERT INTO PACIENTE(idUsuario, nomePaciente, dataNascimento, telefone, rg, cpf, enderecoPaciente)
+VALUES(2, 'Marcelo', '02-10-1987', '11 936878369', '579548609', '47669729607', 'Av. São judas - 000'),
+(3, 'Yuri', '17-03-1999', '11 963061369', '439548674', '30269729115', 'Av. São jose - 111'),
+(4, 'Gabriela', '21-11-2002', '11 966778300', '679548610', '57269727781', 'Av. São carlos - 222')
 GO
 
 INSERT INTO CONSULTA(idSituacao, idPaciente, idMedico, dataConsulta, descricao)

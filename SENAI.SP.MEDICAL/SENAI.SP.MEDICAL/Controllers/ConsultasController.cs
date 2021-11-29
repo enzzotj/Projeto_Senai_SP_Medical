@@ -23,7 +23,7 @@ namespace SENAI.SP.MEDICAL.Controllers
             _consultaRepository = new ConsultaRepository();
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult ListarTodos()
         {
@@ -45,7 +45,7 @@ namespace SENAI.SP.MEDICAL.Controllers
             }
 
         }
-        [Authorize(Roles = "Médico")]
+        //[Authorize(Roles = "Médico")]
         [HttpGet("Medico")]
         public IActionResult ConsultaMedico()
         {
@@ -78,7 +78,7 @@ namespace SENAI.SP.MEDICAL.Controllers
 
         }
 
-        [Authorize(Roles = "2")]
+        //[Authorize(Roles = "2")]
         [HttpGet("Paciente")]
         public IActionResult ConsultaPaciente()
         {
@@ -112,7 +112,7 @@ namespace SENAI.SP.MEDICAL.Controllers
 
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Cadastrar(Consultum novaConsulta)
         {
@@ -142,7 +142,7 @@ namespace SENAI.SP.MEDICAL.Controllers
 
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPatch("Cancelar/{id:int}")]
         public IActionResult Deletar(int id)
         {

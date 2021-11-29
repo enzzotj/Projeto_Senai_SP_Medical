@@ -16,6 +16,7 @@ namespace SENAI.SP.MEDICAL.Domains
         public short? IdUsuario { get; set; }
         public short? IdClinica { get; set; }
         public short? IdEspecialidade { get; set; }
+        public string NomeMedico { get; set; }
         public string Crm { get; set; }
 
         public virtual Clinica IdClinicaNavigation { get; set; }

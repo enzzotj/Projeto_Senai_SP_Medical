@@ -10,22 +10,11 @@ SELECT * FROM PACIENTE
 SELECT * FROM MEDICO
 SELECT * FROM CONSULTA
 
-SELECT nomeUsuario 'Nome', email 'Email', nomeTipoUser 'tipo de usuário', cpf, rg
-FROM USUARIO
+
+SELECT idConsulta, nomePaciente, nomeMedico, descricao, nomeSituacao, dataConsulta FROM CONSULTA
 INNER JOIN PACIENTE
-ON USUARIO.idUsuario = PACIENTE.idUsuario
-INNER JOIN TIPO_USUARIO
-ON TIPO_USUARIO.idTipoUsuario = USUARIO.idTipoUsuario
-GO
-
-SELECT * FROM USUARIO u
-INNER JOIN MEDICO m
-ON u.idUsuario = m.idUsuario
-
-
-SELECT nomeUsuario, email, cpf, enderecoPaciente
-FROM usuario u
-INNER JOIN paciente
-ON u.idUsuario = paciente.idUsuario
-
-
+ON CONSULTA.idPaciente = PACIENTE.idPaciente
+INNER JOIN MEDICO
+ON CONSULTA.idMedico = MEDICO.idMedico
+INNER JOIN SITUACAO
+ON CONSULTA.idSituacao = SITUACAO.idSituacao

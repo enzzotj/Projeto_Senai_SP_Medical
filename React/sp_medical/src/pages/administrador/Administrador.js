@@ -1,25 +1,29 @@
 import { Component } from "react";
+import './estilo.css'
+// import Logo from '../img/logo1.png'
 
 class Administrador extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            listaAdministrador: [{Consulta : 1, Nome: "Enzzo", Medico: "Jaco", Descriçao: "Doente", Situaçao: "Andamento", Data: "11/11/2011"}, {Consulta : 2, Nome: "aaa", Medico: "bbb", Descriçao: "Sei la", Situaçao: "Finalizado", Data: "01/01/2021"}],
-            titulo: ''
+            listaAdministrador: [],
+            titulo: '',
+
         };
     };
 
 
     BuscarAdministrador = () => {
+        console.log("Chamar Api")
 
         fetch('http://localhost:5000/api/Consultas')
 
-        .then(resposta => resposta.json())
+            .then(resposta => resposta.json())
 
-        .then(dados => this.setState({listaAdministrador : dados}))
+            .then(dados => this.setState({ listaAdministrador: dados }))
 
-        .catch(erro => console.log(erro))
+            .catch(erro => console.log(erro))
     }
 
 
@@ -31,14 +35,24 @@ class Administrador extends Component {
 
         return (
 
-            <div>
+            <div className="container_fundotab">
+
+                <header>
+                    <div class="container container_header">
+
+                        {/* <img className="logo" src="img/logo1.png" alt="logo"> */}
+                        {/* <Logo className="logo" alt="logo"/> */}
+                        <div className ="container_final_header">
+                        <h1>Administrador</h1>
+                        {/* <input className ="img_sair" type ="image" src="img/SairBranco.png" alt="Sair"> */}
+                        </div>
+                    </div>
+                </header>
 
                 <main>
-
-                    <section>
-
-                        <h2>Lista para Administrador</h2>
-                        <table>
+                    <div className="container_centralizar">
+                    <section className="container_tab">
+                        <table className="table">
 
                             <thead>
                                 <tr>
@@ -56,16 +70,16 @@ class Administrador extends Component {
 
                             <tbody>
 
-                            {
-                                    this.state.listaAdministrador.map( (listaAdm) => {
-                                        return(
-                                            <tr key={listaAdm.Consulta}>
-                                               <td>{listaAdm.Consulta}</td> 
-                                               <td>{listaAdm.Nome}</td> 
-                                               <td>{listaAdm.Medico}</td> 
-                                               <td>{listaAdm.Descriçao}</td> 
-                                               <td>{listaAdm.Situaçao}</td> 
-                                               <td>{listaAdm.Data}</td> 
+                                {
+                                    this.state.listaAdministrador.map((listaAdm) => {
+                                        return (
+                                            <tr key={listaAdm.idConsulta}>
+                                                <td>{listaAdm.idConsulta}</td>
+                                                <td>{listaAdm.nomePaciente}</td>
+                                                <td>{listaAdm.nomeMedico}</td>
+                                                <td>{listaAdm.Descricao}</td>
+                                                <td>{listaAdm.situacao}</td>
+                                                <td>{listaAdm.dataConsulta}</td>
                                             </tr>
                                         )
                                     }
@@ -78,7 +92,7 @@ class Administrador extends Component {
                         </table>
 
                     </section>
-
+                    </div>
                 </main>
 
             </div>

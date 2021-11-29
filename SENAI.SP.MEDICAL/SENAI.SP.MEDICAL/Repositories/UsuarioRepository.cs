@@ -18,9 +18,8 @@ namespace SENAI.SP.MEDICAL.Repositories
         {
             Usuario userBuscado = BuscarPorId(id);
 
-            if (atualizarUsuario.NomeUsuario != null || atualizarUsuario.Senha != null || atualizarUsuario.Email != null)
+            if (atualizarUsuario.Senha != null || atualizarUsuario.Email != null)
             {
-                userBuscado.NomeUsuario = atualizarUsuario.NomeUsuario;
                 userBuscado.Email = atualizarUsuario.Email;
                 userBuscado.Senha = atualizarUsuario.Senha;
 
@@ -72,7 +71,6 @@ namespace SENAI.SP.MEDICAL.Repositories
                 .Select(u => new Usuario
                 {
                     IdUsuario = u.IdUsuario,
-                    NomeUsuario = u.NomeUsuario,
                     Email = u.Email,
                     IdTipoUsuario = u.IdTipoUsuario,
                     IdTipoUsuarioNavigation = new TipoUsuario()

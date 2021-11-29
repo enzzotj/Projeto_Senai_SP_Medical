@@ -14,6 +14,11 @@ namespace SENAI.SP.MEDICAL.Domains
         public DateTime DataConsulta { get; set; }
         public string Descricao { get; set; }
 
+        public string nomePaciente { get; set; }
+
+        public string nomeMedico { get; set; }
+        public string situacao { get; set; }
+
         public virtual Medico IdMedicoNavigation { get; set; }
         public virtual Paciente IdPacienteNavigation { get; set; }
         public virtual Situacao IdSituacaoNavigation { get; set; }

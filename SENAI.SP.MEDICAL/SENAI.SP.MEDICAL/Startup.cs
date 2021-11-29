@@ -84,7 +84,7 @@ namespace SENAI.SP.MEDICAL
 
             app.UseRouting();
 
-            app.UseCors("CorsPolicy")
+            app.UseCors("CorsPolicy");
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();

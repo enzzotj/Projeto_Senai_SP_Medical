@@ -63,27 +63,32 @@ namespace SENAI.SP.MEDICAL.Repositories
                     IdConsulta = p.IdConsulta,
                     IdSituacao = p.IdSituacao,
                     DataConsulta = p.DataConsulta,
+                    Descricao = p.Descricao,
+                    
+                    nomePaciente = p.IdPacienteNavigation.NomePaciente,
+                    nomeMedico = p.IdMedicoNavigation.NomeMedico,
+                    situacao = p.IdSituacaoNavigation.NomeSituacao,
 
                     IdMedicoNavigation = new Medico()
                     {
                         Crm = p.IdMedicoNavigation.Crm,
+                        NomeMedico = p.IdMedicoNavigation.NomeMedico,
                         IdEspecialidadeNavigation = new Especialidade()
                         {
                             NomeEspecialidade = p.IdMedicoNavigation.IdEspecialidadeNavigation.NomeEspecialidade,
 
                         }
+                        
                     },
+
+
                     IdPacienteNavigation = new Paciente()
                     {
                         Rg = p.IdPacienteNavigation.Rg,
                         Cpf = p.IdPacienteNavigation.Cpf,
                         DataNascimento = p.IdPacienteNavigation.DataNascimento,
                         EnderecoPaciente = p.IdPacienteNavigation.EnderecoPaciente,
-                        IdUsuarioNavigation = new Usuario()
-                        {
-                            NomeUsuario = p.IdPacienteNavigation.IdUsuarioNavigation.NomeUsuario,
-                            Email = p.IdPacienteNavigation.IdUsuarioNavigation.Email
-                        }
+                        NomePaciente = p.IdPacienteNavigation.NomePaciente
                     },
 
                 })

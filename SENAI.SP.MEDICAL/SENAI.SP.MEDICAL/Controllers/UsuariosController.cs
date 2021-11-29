@@ -24,7 +24,7 @@ namespace SENAI.SP.MEDICAL.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public IActionResult Listar()
         {
             if (_usuarioRepository.ListarUsuarios() == null)
@@ -38,7 +38,7 @@ namespace SENAI.SP.MEDICAL.Controllers
             return Ok(_usuarioRepository.ListarUsuarios());
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Cadastrar(Usuario novoUser)
         {
@@ -66,7 +66,7 @@ namespace SENAI.SP.MEDICAL.Controllers
 
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPut("atualizar/{id}")]
         public IActionResult Atualizar(int id, Usuario atualizarUsuario)
         {
@@ -109,7 +109,7 @@ namespace SENAI.SP.MEDICAL.Controllers
 
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost("imagem/bd/{idUsuario}")]
         public IActionResult postBD(IFormFile arquivo, short idUsuario)
         {
@@ -143,7 +143,7 @@ namespace SENAI.SP.MEDICAL.Controllers
 
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet("imagem/bd/{idUsuario}")]
         public IActionResult getBd(short idUsuario)
         {
@@ -159,7 +159,7 @@ namespace SENAI.SP.MEDICAL.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpDelete("deletar/{idUsuario}")]
         public IActionResult Deletar(short idUsuario)
         {
@@ -178,7 +178,7 @@ namespace SENAI.SP.MEDICAL.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(int id)
         {

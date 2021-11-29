@@ -19,6 +19,7 @@ namespace SENAI.SP.MEDICAL.Domains
         public string Rg { get; set; }
         public string Cpf { get; set; }
         public string EnderecoPaciente { get; set; }
+        public string NomePaciente { get; set; }
 
         public virtual Usuario IdUsuarioNavigation { get; set; }
         public virtual ICollection<Consultum> Consulta { get; set; }

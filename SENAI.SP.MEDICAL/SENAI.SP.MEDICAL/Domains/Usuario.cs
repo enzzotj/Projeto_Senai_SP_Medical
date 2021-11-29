@@ -16,7 +16,6 @@ namespace SENAI.SP.MEDICAL.Domains
 
         public short IdUsuario { get; set; }
         public short? IdTipoUsuario { get; set; }
-        public string NomeUsuario { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
 

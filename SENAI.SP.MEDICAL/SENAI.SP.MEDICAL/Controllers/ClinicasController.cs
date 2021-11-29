@@ -21,7 +21,7 @@ namespace SENAI.SP.MEDICAL.Controllers
             _clinicaRepository = new ClinicaRepository();
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Cadastrar(Clinica novaClinica)
         {
@@ -51,7 +51,7 @@ namespace SENAI.SP.MEDICAL.Controllers
 
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Listar()
         {
@@ -80,7 +80,7 @@ namespace SENAI.SP.MEDICAL.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPut("{id:int}")]
         public IActionResult Atualizar(int id, Clinica attClinica)
         {
@@ -123,7 +123,7 @@ namespace SENAI.SP.MEDICAL.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpDelete("{id:int}")]
         public IActionResult Deletar(int id)
         {
