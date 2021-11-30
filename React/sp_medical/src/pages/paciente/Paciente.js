@@ -2,33 +2,33 @@ import { Component } from "react";
 import './estilo.css'
 import Logo from '../img/logo1.png'
 
-class Administrador extends Component {
+class Paciente extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            listaAdministrador: [],
+            listaPaciente: [],
             titulo: '',
 
         };
     };
 
 
-    BuscarAdministrador = () => {
+    BuscarPaciente = () => {
         console.log("Chamar Api")
 
         fetch('http://localhost:5000/api/Consultas')
 
             .then(resposta => resposta.json())
 
-            .then(dados => this.setState({ listaAdministrador: dados }))
+            .then(dados => this.setState({ listaPaciente: dados }))
 
             .catch(erro => console.log(erro))
     }
 
 
     componentDidMount() {
-        this.BuscarAdministrador()
+        this.BuscarPaciente()
     }
 
     render() {
@@ -43,7 +43,7 @@ class Administrador extends Component {
                         {/* <img className="logo" src={Logo} alt="logo"> */}
                         {/* <Logo className="logo" alt="logo"/> */}
                         <div className ="container_final_header">
-                        <h1>Administrador</h1>
+                        <h1>Medico</h1>
                         {/* <input className ="img_sair" type ="image" src="img/SairBranco.png" alt="Sair"> */}
                         </div>
                     </div>
@@ -57,9 +57,8 @@ class Administrador extends Component {
                             <thead>
                                 <tr>
 
-                                    <th>Consulta</th>
                                     <th>Nome</th>
-                                    <th>Medico</th>
+                                    <th>Nome Medico</th>
                                     <th>Descriçao</th>
                                     <th>Situaçao</th>
                                     <th>Data</th>
@@ -71,15 +70,14 @@ class Administrador extends Component {
                             <tbody>
 
                                 {
-                                    this.state.listaAdministrador.map((listaAdm) => {
+                                    this.state.listaPaciente.map((listaPaciente) => {
                                         return (
-                                            <tr key={listaAdm.idConsulta}>
-                                                <td>{listaAdm.idConsulta}</td>
-                                                <td>{listaAdm.nomePaciente}</td>
-                                                <td>{listaAdm.nomeMedico}</td>
-                                                <td>{listaAdm.descricao}</td>
-                                                <td>{listaAdm.situacao}</td>
-                                                <td>{listaAdm.dataConsulta}</td>
+                                            <tr key={listaPaciente.idConsulta}>
+                                                <td>{listaPaciente.nomePaciente}</td>
+                                                <td>{listaPaciente.nomeMedico}</td>
+                                                <td>{listaPaciente.descricao}</td>
+                                                <td>{listaPaciente.situacao}</td>
+                                                <td>{listaPaciente.dataConsulta}</td>
                                             </tr>
                                         )
                                     }
@@ -101,4 +99,4 @@ class Administrador extends Component {
 
 };
 
-export default Administrador;
+export default Paciente;

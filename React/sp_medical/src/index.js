@@ -8,7 +8,10 @@ import './index.css';
 
 import Home from './pages/login/App';
 import Administrador from './pages/administrador/Administrador'
+import Medico from './pages/medico/Medico'
 import NotFound from './pages/notFound/NotFound'
+import Paciente from './pages/paciente/Paciente'
+
 
 import reportWebVitals from './reportWebVitals';
 
@@ -19,6 +22,8 @@ const routing = (
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route path="/administrador" component={Administrador}/>
+        <Route path="/medico" component={Medico}/>
+        <Route path="/paciente" component={Paciente}/>
         <Route path="/notfound" component={NotFound}/>
         <Redirect to="/notfound"/>
       </Switch>
